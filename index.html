@@ -5,12 +5,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Punti e Spunti — Atelier of Handwoven Bags · Milano</title>
-<meta name="description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Oaxaca · Milano. Punti e Spunti.">
+<meta name="description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano. Punti e Spunti.">
 <meta name="theme-color" content="#F2E6D8">
+<link rel="canonical" href="https://puntiespunti.it/">
+
+<!-- social cards — replace the absolute URLs with the live domain -->
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="Punti e Spunti">
+<meta property="og:locale"      content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:url"         content="https://puntiespunti.it/">
+<meta property="og:title"       content="Punti e Spunti — Atelier of Handwoven Bags · Milano">
+<meta property="og:description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano.">
+<meta property="og:image"       content="https://puntiespunti.it/og-image.jpg">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"   content="Punti e Spunti — handwoven linen on the loom.">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Punti e Spunti — Atelier of Handwoven Bags · Milano">
+<meta name="twitter:description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano.">
+<meta name="twitter:image"       content="https://puntiespunti.it/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "additionalType": "https://schema.org/Organization",
+  "name": "Punti e Spunti",
+  "description": "An atelier of handwoven artisanal bags. Woven by women's hands, for lives lived slowly.",
+  "url": "https://puntiespunti.it/",
+  "image": "https://puntiespunti.it/og-image.jpg",
+  "foundingDate": "2016",
+  "slogan": "By her hands, always.",
+  "knowsLanguage": ["it", "en"],
+  "founder": {
+    "@type": "Person",
+    "name": "Alessandra Guetta",
+    "jobTitle": "Artisan — third generation at the loom"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Milano",
+    "addressRegion": "Lombardia",
+    "addressCountry": "IT"
+  },
+  "areaServed": ["Milano", "Toscana", "Italia"],
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Product",
+      "name": "Handwoven bags",
+      "material": "Sun-dried raffia, linen, vegetable-tanned leather trim"
+    }
+  }
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2E6D8'/%3E%3Cpath d='M46 19c0-7-9-10-16-8-8 2-11 11-4 16 7 5 19 6 23 13 4 8-5 15-15 14-7-1-12-5-13-10' fill='none' stroke='%23B0562F' stroke-width='4.6' stroke-dasharray='7.5 5.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    PUNTI E SPUNTI — design system
@@ -320,7 +373,7 @@ html.js .pl-tag{opacity:0;}
 html.js .nav{opacity:0;}
 /* once we leave the hero the masthead earns a whisper of a scrim so the
    wordmark never fights the editorial type sliding beneath it */
-.nav::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+.nav::before{content:'';position:absolute;inset:0 0 -20px 0;z-index:-1;pointer-events:none;
   -webkit-backdrop-filter:blur(11px);backdrop-filter:blur(11px);
   -webkit-mask-image:linear-gradient(#000 54%,rgba(0,0,0,.55) 78%,transparent);
   mask-image:linear-gradient(#000 54%,rgba(0,0,0,.55) 78%,transparent);
@@ -436,7 +489,7 @@ section{position:relative;padding:22vh 6vw;}
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;padding-top:13vh;padding-bottom:12vh;overflow:hidden;
 }
-.hero-kicker{margin-bottom:3.4vh;opacity:.85;}
+.hero-kicker{margin-bottom:3.4vh;opacity:1;font-weight:600;}
 .hero-title{
   font-family:var(--display);font-weight:400;
   font-size:clamp(3.9rem,19vw,16rem);
@@ -456,7 +509,7 @@ html.js .hero-title .ht-s.threaded{color:var(--clay);}
 /* the full name, stitched in — used beneath the mark and in the opening */
 .stitch-label{
   display:flex;align-items:center;justify-content:center;gap:1.15rem;
-  font-family:var(--sans);font-weight:500;
+  font-family:var(--sans);font-weight:600;
   font-size:.6rem;letter-spacing:.44em;text-indent:.44em;text-transform:uppercase;
 }
 .stitch-label .nm-s{color:var(--clay);}
@@ -667,7 +720,8 @@ html.js .hero-edge{opacity:0;}
 .ft-word span{display:inline-block;will-change:transform;}
 .ft-word.stitched{overflow:visible;padding:0;max-width:min(100%,1020px);margin:0 auto;}
 .ft-word svg{width:100%;height:auto;display:block;overflow:visible;}
-.ft-word .ft-s{stroke:#F2C7A8;}
+.ft-word .ft-s{stroke:#EFB37E;fill:#EFB37E;fill-opacity:.10;}
+.ft-word .ft-e{font-family:var(--serif);font-style:italic;stroke-dasharray:8 6;stroke-width:1.7;opacity:.66;}
 .ft-word text{
   font-family:var(--display);font-weight:400;
   fill:currentColor;fill-opacity:.05;
@@ -760,7 +814,7 @@ html.js .ft-stitchwrap{clip-path:inset(0 100% 0 0);}
     <a href="#footer-sec" data-hover><span class="ml-inner"><em>04</em><span class="ml-word">Correspondence</span></span></a>
   </nav>
   <div class="menu-foot label">
-    <span>Oaxaca — Milano</span>
+    <span>Toscana — Milano</span>
     <span id="clockMenu">Milano —</span>
     <span>Est. MMXVI</span>
   </div>
@@ -783,7 +837,7 @@ html.js .ft-stitchwrap{clip-path:inset(0 100% 0 0);}
   <!-- ============ hero ============ -->
   <section id="hero" data-bg="#F2E6D8" data-ink="#3A2A22" data-line="rgba(58,42,34,.14)">
     <div class="hero-frame" aria-hidden="true"><i class="fT"></i><i class="fR"></i><i class="fB"></i><i class="fL"></i></div>
-    <p class="hero-kicker label">Atelier — Est. MMXVI &nbsp;·&nbsp; Oaxaca — Milano</p>
+    <p class="hero-kicker label">Atelier — Est. MMXVI &nbsp;·&nbsp; Toscana — Milano</p>
     <h1 class="hero-title" id="heroTitle" aria-label="Punti e Spunti">
       <span class="ht-line"><span class="ht-word"><span class="ht-s">S</span>PUNTI</span></span>
     </h1>
@@ -805,7 +859,7 @@ html.js .ft-stitchwrap{clip-path:inset(0 100% 0 0);}
     <p class="mf-text" id="mfText">Every bag begins as a <em>single thread</em> — pulled, twisted and tamed by hands that have known the loom for <em>three generations.</em> We do not manufacture. <em>We remember.</em></p>
     <div class="mf-sig">
       <span class="sig-line"></span>
-      <span class="label">The women of Punti e Spunti — weavers since 1952</span>
+      <span class="label">Alessandra Guetta — third generation at the loom, Milano</span>
     </div>
   </section>
 
@@ -853,7 +907,7 @@ html.js .ft-stitchwrap{clip-path:inset(0 100% 0 0);}
               <span class="label">Piece — 01</span>
               <h3>The Nomad Tote</h3>
               <p class="piece-mat">Sun-dried raffia · vegetable-tanned trim</p>
-              <p class="piece-note">Woven over six days in the hills of Oaxaca — no two carry the same light.</p>
+              <p class="piece-note">Woven over six days in the Tuscan hills — no two carry the same light.</p>
             </div>
           </div>
         </article>
@@ -1052,9 +1106,13 @@ html.js .ft-stitchwrap{clip-path:inset(0 100% 0 0);}
     </div>
     <div class="ft-word stitched" id="ftWord">
       <span class="ft-stitchwrap" style="display:block">
+        <!-- the mark: one PUNTI stacked on the other, and the single S
+             that turns the second into SPUNTI stepping out to the left -->
         <svg viewBox="0 0 1000 372" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Punti e Spunti">
-          <text x="500" y="146" text-anchor="middle" font-size="182" textLength="900" lengthAdjust="spacing">PUNTI E</text>
-          <text x="500" y="330" text-anchor="middle" font-size="182" textLength="900" lengthAdjust="spacing"><tspan class="ft-s">S</tspan>PUNTI</text>
+          <text class="ft-s" x="40"  y="330" font-size="182">S</text>
+          <text          x="180" y="146" font-size="182" textLength="700" lengthAdjust="spacing">PUNTI</text>
+          <text class="ft-e" x="908" y="196" font-size="118">e</text>
+          <text          x="180" y="330" font-size="182" textLength="700" lengthAdjust="spacing">PUNTI</text>
         </svg>
       </span>
     </div>
@@ -1231,9 +1289,11 @@ splitWords(document.getElementById('atQuote'));
 /* ============================================================
    PHOTOGRAPHY — the only place image paths live.
 
-   These eight frames are PLACEHOLDERS. To drop in the real
-   campaign shots, replace the eight strings below and nothing
-   else; every other part of the page reads from here.
+   The eight frames below are the AI-generated placeholders this
+   build was designed around. To drop in Alessandra's real campaign
+   shots, put the files in assets/img/ under the names in
+   PHOTO_LOCAL, then change PHOTO_SOURCE to 'local'. Nothing else
+   in the page needs touching.
 
    What each frame needs to be:
      front  — the piece square-on, cut out on a transparent
@@ -1243,15 +1303,29 @@ splitWords(document.getElementById('atQuote'));
               lighting and same distance. ~900px is plenty.
      Portrait 3:4 keeps the layout identical to this build.
 
-   Local files work exactly as well as URLs:
-       front:'img/nomad-front.webp'
+   If a file is missing or a URL 404s, that piece falls back to its
+   hand-drawn illustration and the page carries on — nothing breaks.
    ============================================================ */
-var PHOTOGRAPHS = [
+
+/* 'remote' = the generation CDN this build was made against.
+   'local'  = assets/img/ (run scripts/fetch-photography.sh first). */
+var PHOTO_SOURCE = 'remote';
+
+var PHOTO_LOCAL = [
+  { /* 01 - The Nomad Tote  */ front:'assets/img/01-nomad-front.webp',   alt:'assets/img/01-nomad-alt.webp'   },
+  { /* 02 - La Riva Saddle  */ front:'assets/img/02-lariva-front.webp',  alt:'assets/img/02-lariva-alt.webp'  },
+  { /* 03 - Ombra Bucket    */ front:'assets/img/03-ombra-front.webp',   alt:'assets/img/03-ombra-alt.webp'   },
+  { /* 04 - Vela Crescent   */ front:'assets/img/04-vela-front.webp',    alt:'assets/img/04-vela-alt.webp'    }
+];
+
+var PHOTO_REMOTE = [
   { /* 01 - The Nomad Tote  */ front:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/255fc44d-842d-46cb-9e6a-8e7ca08f2106.webp', alt:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/12b37cce-5f17-45c0-ac02-4072b0ef8980.webp' },
   { /* 02 - La Riva Saddle  */ front:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/d57f31bb-9342-4da4-8419-11da74a53d82.webp', alt:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/fa382da5-5201-4b73-8d49-d01e2100d166.webp' },
   { /* 03 - Ombra Bucket    */ front:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/5558794c-ae65-489d-8a85-5de6d418877c.webp', alt:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/bba32c20-f27c-4d11-b7c1-dfae62a8261b.webp' },
   { /* 04 - Vela Crescent   */ front:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/95630403-5f1a-4dae-828e-7d64bf19fe3e.webp', alt:'https://d2ol7oe51mr4n9.cloudfront.net/user_2ykR6HijNtnVqnRnCUrCf5zvljU/f7b77abb-715b-4772-92a1-0b03ec01dbec.webp' }
 ];
+
+var PHOTOGRAPHS = (PHOTO_SOURCE === 'local') ? PHOTO_LOCAL : PHOTO_REMOTE;
 
 /* ============================================================
    Photo stage — the photograph, with the atelier drawing beneath
@@ -1329,14 +1403,14 @@ var I18N=[
   {sel:'.menu-links a[href="#atelier"] .ml-word',en:'The Atelier',it:"L'Atelier"},
   {sel:'.menu-links a[href="#footer-sec"] .ml-word',en:'Correspondence',it:'Corrispondenza'},
   {sel:'.menu-foot span:last-child',en:'Est. MMXVI',it:'Fond. MMXVI'},
-  {sel:'.hero-kicker',html:1,en:'Atelier — Est. MMXVI &nbsp;·&nbsp; Oaxaca — Milano',it:'Atelier — Fond. MMXVI &nbsp;·&nbsp; Oaxaca — Milano'},
+  {sel:'.hero-kicker',html:1,en:'Atelier — Est. MMXVI &nbsp;·&nbsp; Toscana — Milano',it:'Atelier — Fond. MMXVI &nbsp;·&nbsp; Toscana — Milano'},
   {sel:'.ht-name .nm-t',html:1,en:'Punti e <span class="nm-s">S</span>punti',it:'Punti e <span class="nm-s">S</span>punti'},
   {sel:'.hero-sub',html:1,en:'Woven by women\'s hands,<br>for lives lived slowly.',it:'Intrecciate da mani di donna,<br>per vite vissute con lentezza.'},
   {sel:'.hero-scroll .label',en:'Scroll to drift',it:'Scorri, e lasciati andare'},
   {sel:'.hero-meta .hero-edge:first-child',en:'Nº 001 — Overture',it:'Nº 001 — Ouverture'},
   {sel:'.hero-meta .hero-edge:last-child',en:'By her hands, always',it:'Dalle sue mani, sempre'},
   {sel:'#manifesto .sec-label',en:'A note on slowness — 01',it:'Una nota sulla lentezza — 01'},
-  {sel:'.mf-sig .label',en:'The women of Punti e Spunti — weavers since 1952',it:'Le donne di Punti e Spunti — tessitrici dal 1952'},
+  {sel:'.mf-sig .label',en:'Alessandra Guetta — third generation at the loom, Milano',it:'Alessandra Guetta — terza generazione al telaio, Milano'},
   {sel:'#collection .sec-label',en:'The Collection — MMXXVI',it:'La Collezione — MMXXVI'},
   {sel:'.col-head h2 .rl:first-child',en:'Four vessels,',it:'Quattro forme,'},
   {sel:'.col-head h2 .rl:last-child',en:'one unbroken thread.',it:'un filo ininterrotto.'},
@@ -1354,7 +1428,7 @@ var I18N=[
   {sel:'.piece:nth-child(2) .piece-mat',en:'Full-grain leather · hand-burnished edge',it:'Pelle pieno fiore · bordi bruniti a mano'},
   {sel:'.piece:nth-child(3) .piece-mat',en:'Midnight-dyed wild palm · brass ring',it:'Palma selvatica tinta a mezzanotte · anello in ottone'},
   {sel:'.piece:nth-child(4) .piece-mat',en:'Organic cotton cord · olivewood clasp',it:"Corda di cotone biologico · chiusura in legno d'ulivo"},
-  {sel:'.piece:nth-child(1) .piece-note',en:'Woven over six days in the hills of Oaxaca — no two carry the same light.',it:'Intrecciata in sei giorni sulle colline di Oaxaca — nessuna porta la stessa luce.'},
+  {sel:'.piece:nth-child(1) .piece-note',en:'Woven over six days in the Tuscan hills — no two carry the same light.',it:'Intrecciata in sei giorni sulle colline toscane — nessuna porta la stessa luce.'},
   {sel:'.piece:nth-child(2) .piece-note',en:'Cut from a single hide, stitched with waxed linen — it darkens as it learns you.',it:"Tagliata da un'unica pelle, cucita con lino cerato — si scurisce mentre ti conosce."},
   {sel:'.piece:nth-child(3) .piece-note',en:'Dyed at dusk in indigo drawn from the field behind the atelier.',it:"Tinta al crepuscolo nell'indaco raccolto nel campo dietro l'atelier."},
   {sel:'.piece:nth-child(4) .piece-note',en:'Knotted, never sewn — one unbroken line from first loop to last.',it:"Annodata, mai cucita — un'unica linea dal primo all'ultimo nodo."},
@@ -1440,7 +1514,7 @@ function tickClock(){
   try{
     var s=new Intl.DateTimeFormat('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit'}).format(new Date());
     var m=document.getElementById('clockMenu'); if(m) m.textContent='Milano — '+s;
-    var f=document.getElementById('clockFt'); if(f) f.textContent='Milano '+s;
+    var f=document.getElementById('clockFt'); if(f) f.textContent=s;   /* the address already says Milano */
   }catch(e){}
 }
 tickClock(); setInterval(tickClock,30000);
@@ -1568,52 +1642,219 @@ try{
   var camera=new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, .1, 120);
   camera.position.set(0,0,16);
 
-  scene.fog=new THREE.FogExp2(0xF2E6D8, 0.046);
+  scene.fog=new THREE.FogExp2(0xF2E6D8, 0.030);
 
-  /* soft daylight of the atelier */
-  scene.add(new THREE.AmbientLight(0xF7E6D0, .8));
-  var key=new THREE.DirectionalLight(0xFFF3E4, .7); key.position.set(6,10,8); scene.add(key);
-  var fill=new THREE.DirectionalLight(0xF2D6BE, .35); fill.position.set(-7,-4,6); scene.add(fill);
-  var rim=new THREE.PointLight(0xC97C5F, .7, 60); rim.position.set(-10,-6,4); scene.add(rim);
+  /* One window, high and to the right — the light an atelier actually has.
+     Ambient is kept low on purpose: it is the darkness between the threads
+     that makes a weave read as cloth rather than as a pale screen. */
+  scene.add(new THREE.AmbientLight(0xEFDCC4, .26));
+  var key=new THREE.DirectionalLight(0xFFF1DE, 1.46); key.position.set(11,5.5,4.5); scene.add(key);
+  var fill=new THREE.DirectionalLight(0xE8CDB2, .30); fill.position.set(-8,-3.5,6); scene.add(fill);
+  var rim=new THREE.PointLight(0xC97C5F, .95, 60); rim.position.set(-11,-6,3); scene.add(rim);
+  /* a cool bounce off the wall behind, so the shadow sides are not dead */
+  var bounce=new THREE.DirectionalLight(0xE2CFB8, .40); bounce.position.set(-4,-7,-8); scene.add(bounce);
 
-  /* the woven wreath — a crown of raffia strands, matte as straw */
-  var knotGroup=new THREE.Group(); scene.add(knotGroup);
-  /* undyed linen and cotton — thread, not withy */
-  var STRAND_COLORS=[0xEFE3CC,0xDFCFB2,0xF5ECDB,0xC9B392,0xE8D8BF,0xD8C2A6,0xBFA786,0xE3CDB4];
-  var strandMats=[];
-  var NSTR=TOUCH?30:48, SEG=TOUCH?170:230;
-  for(var si=0;si<NSTR;si++){
-    var phase=Math.random()*Math.PI*2;
-    var weave=4+(si%5);                    /* tighter twist than a willow bend */
-    var amp=.3+Math.random()*.45;
-    var rjit=(Math.random()-.5)*.72;       /* threads stray from the bundle */
-    var fine=Math.random()<.3;             /* a few loose fibres */
-    var pts=[];
-    for(var kk=0;kk<140;kk++){
-      var aa=kk/140*Math.PI*2;
-      var rr=4.35+rjit
-        +Math.sin(aa*weave+phase)*.3
-        +Math.sin(aa*(weave*2.3)+phase*1.9)*.14
-        +Math.sin(aa*2+phase*1.7)*.2;
-      pts.push(new THREE.Vector3(
-        Math.cos(aa)*rr,
-        Math.sin(aa)*rr*.62+Math.cos(aa*weave+phase)*.24,
-        Math.sin(aa*weave+phase)*(.5+amp*.42)+Math.cos(aa*(weave*1.7))*.16
+  /* ------------------------------------------------------------------
+     THE CLOTH ON THE LOOM
+     Not a wreath. A piece of hand-woven bag cloth caught mid-make:
+     warp threads running one way, weft crossing over-and-under in a
+     true plain weave, the whole panel draped and curling like fabric,
+     and at every edge the threads escape the weave and trail off loose
+     — the single unbroken thread this house is named for, on its way
+     to becoming a bag.
+     ------------------------------------------------------------------ */
+  var clothGroup=new THREE.Group(); scene.add(clothGroup);
+
+  /* undyed linen, cotton and sun-dried raffia — with two strands of
+     vegetable-tanned cord run through, the way the trim is */
+  var STRAND_COLORS=[0xF5EBDA,0xE7D9C0,0xF8F1E4,0xDCCCAE,0xEFE3CE,0xE2D3B8,0xF2E8D6,0xD5C3A4];
+  var CORD_COLORS  =[0xCBA671,0xD9B786,0xBE9660];
+
+  /* a narrow vertical length of cloth on a phone, a wider panel on a desk */
+  var CW = TOUCH ? 6.2 : 9.6;          /* cloth width  */
+  var CH = TOUCH ? 8.0 : 6.0;          /* cloth height */
+  var NW = TOUCH ? 33 : 55;            /* warp threads — must be odd */
+  var NF = TOUCH ? 25 : 39;            /* weft threads — must be odd */
+  var SEG= TOUCH ? 88 : 122;
+  var pitchX=CW/(NW-1), pitchY=CH/(NF-1);
+  var WEAVE = Math.min(pitchX,pitchY)*.33;   /* how far a thread rides over its crossing */
+
+  /* the drape — a soft curl with a twist through it, so the panel hangs
+     like cloth rather than standing up like a screen */
+  function drape(u,v){
+    return -.95*u*u
+         + .40*Math.sin(1.40*v + .85*u)
+         + .30*u*v
+         - .26*v*v;
+  }
+
+  var clothShade=null, clothShadeMat=null, castMat=null;
+  var RSEG = TOUCH ? 5 : 7;                 /* a thread is round, not a ribbon */
+  var HAS_SHEEN = !TOUCH && THREE.MeshPhysicalMaterial;
+  var strandMats=[], strandInfo=[], strandMeshes=[];
+  function addStrand(pts, rad, color, op, info){
+    var curve=new THREE.CatmullRomCurve3(pts,false,'centripetal');
+    var geo=new THREE.TubeGeometry(curve,SEG,rad,RSEG,false);
+    /* linen and raffia are not dead matte — they carry a low, directional
+       sheen along the fibre, which is most of what makes cloth look costly */
+    var mat = HAS_SHEEN
+      ? new THREE.MeshPhysicalMaterial({
+          color:color, roughness:.70, metalness:0,
+          sheen:.72, sheenColor:new THREE.Color(0xFFF3E0), sheenRoughness:.55,
+          transparent:true, opacity:op })
+      : new THREE.MeshStandardMaterial({
+          color:color, roughness:.70, metalness:0, transparent:true, opacity:op });
+    strandMats.push(mat); strandInfo.push(info);
+    var mesh=new THREE.Mesh(geo,mat);
+    strandMeshes.push(mesh); clothGroup.add(mesh);
+  }
+
+  /* ---- warp: the threads held on the loom ---- */
+  for(var i=0;i<NW;i++){
+    var u0=-1+2*i/(NW-1);
+    var x0=u0*CW/2;
+    var ph=Math.random()*Math.PI*2;
+    var frT=(i%4===0? .19+Math.random()*.20 : .035+Math.random()*.09),
+        frB=(i%5===2? .17+Math.random()*.18 : .030+Math.random()*.08);
+    var slub=.046+Math.random()*.015;                          /* hand-spun, never uniform */
+    var cord=(i===Math.floor(NW*.23)||i===Math.floor(NW*.44)||i===Math.floor(NW*.79));
+    var pts=[], STEPS=118;
+    for(var k=0;k<=STEPS;k++){
+      var v=-1-frB + (2+frT+frB)*k/STEPS;
+      var vc=Math.max(-1,Math.min(1,v));
+      var esc=Math.abs(v)-1;                                   /* how far past the selvedge */
+      esc=esc>0?esc:0;
+      var fade=Math.max(0,1-esc/.16);
+      var x=x0
+        + Math.sin(v*3.1+ph)*.028                              /* the thread is never dead straight */
+        + (esc>0 ? Math.sin(esc*2.4+ph)*esc*.30 + esc*esc*.55*Math.sin(ph) : 0);
+      var y=vc*CH/2 + (v>1? esc*CH/2*1.06 : v<-1? -esc*CH/2*1.06 : 0);
+      var z=drape(u0,vc)
+        + WEAVE*Math.cos(Math.PI*(vc*(CH/2)/pitchY + i))*fade
+        + (esc>0 ? Math.sin(esc*2.9+ph)*esc*.34 : 0);
+      /* the ply: every thread is a spiral of fibres, and the twist is what
+         catches the window light in little repeating glints */
+      var pt=k*1.45+ph, pa=(cord?slub*1.5:slub)*.105;
+      pts.push(new THREE.Vector3(x+Math.cos(pt)*pa, y, z+Math.sin(pt)*pa));
+    }
+    addStrand(pts, cord? slub*1.06 : slub,
+      cord? CORD_COLORS[i%CORD_COLORS.length] : STRAND_COLORS[i%STRAND_COLORS.length],
+      .56, {ax:'warp', dx:(u0)*.5, dy:(i%2?1:-1)*(.2+Math.random()*.7), dz:(Math.random()-.5)*.7, rz:(Math.random()-.5)*.24});
+  }
+
+  /* ---- weft: the thread the hand carries across, over one and under one ---- */
+  for(var j=0;j<NF;j++){
+    var v0=-1+2*j/(NF-1);
+    var y0=v0*CH/2;
+    var ph2=Math.random()*Math.PI*2;
+    /* the weft turns at the selvedge — except for the few working ends
+       the hand has not yet carried back, which trail off into open thread */
+    var carry=(j%6===2)||(j===NF-2);
+    var frL=.035+Math.random()*.03;
+    var frR=carry ? (.42+Math.random()*.55) : (.035+Math.random()*.03);
+    var sel=Math.random()<.5?1:-1;                              /* which way the turn hooks */
+    var slub2=.045+Math.random()*.016;
+    var cord2=(j===Math.floor(NF*.19)||j===Math.floor(NF*.62));
+    var pts2=[], STEPS2=132;
+    for(var k2=0;k2<=STEPS2;k2++){
+      var u=-1-frL + (2+frL+frR)*k2/STEPS2;
+      var uc=Math.max(-1,Math.min(1,u));
+      var esc2=Math.abs(u)-1; esc2=esc2>0?esc2:0;
+      var fade2=Math.max(0,1-esc2/.16);
+      var xx=uc*CW/2 + (u>1? esc2*CW/2*1.0 : u<-1? -esc2*CW/2*1.0 : 0);
+      var loose=(u>1&&carry) ? esc2 : 0;                       /* only the carried end runs free */
+      var turn =(esc2>0&&!loose) ? esc2 : 0;                    /* everything else simply turns */
+      var yy=y0
+        + Math.sin(u*2.7+ph2)*.026
+        + turn*turn*4.4*sel*pitchY*.9                          /* the selvedge hook */
+        + loose*loose*2.1*Math.sin(ph2*2.3)                    /* the loose end wanders */
+        + Math.sin(loose*7.8+ph2)*loose*.66;                   /* and curls as it falls */
+      var zz=drape(uc,v0)
+        - WEAVE*Math.cos(Math.PI*(uc*(CW/2)/pitchX + j))*fade2
+        + turn*turn*6.5*WEAVE
+        + (loose>0 ? Math.cos(loose*6.4+ph2*1.3)*loose*.98 : 0);
+      var pt2=k2*1.45+ph2, pa2=(cord2?slub2*1.5:slub2)*.105;
+      pts2.push(new THREE.Vector3(xx, yy+Math.cos(pt2)*pa2, zz+Math.sin(pt2)*pa2));
+    }
+    addStrand(pts2, cord2? slub2*1.06 : slub2,
+      cord2? CORD_COLORS[j%CORD_COLORS.length] : STRAND_COLORS[(j+3)%STRAND_COLORS.length],
+      .56, {ax:'weft', dx:(j%2?1:-1)*(.3+Math.random()*1.0), dy:v0*.3, dz:(Math.random()-.5)*.6, rz:(Math.random()-.5)*.2});
+  }
+
+  /* ---- the halo: fine fibres lifting off the surface, the way linen does ---- */
+  var NFUZZ=TOUCH?5:9;
+  for(var f=0;f<NFUZZ;f++){
+    var fu=(Math.random()*2-1)*.85, fv=(Math.random()*2-1)*.85;
+    var dir=Math.random()*Math.PI*2, len=.5+Math.random()*1.5, ph3=Math.random()*Math.PI*2;
+    var pf=[];
+    for(var k3=0;k3<=40;k3++){
+      var tt=k3/40;
+      var uu=fu+Math.cos(dir)*len*tt/(CW/2);
+      var vv=fv+Math.sin(dir)*len*tt/(CH/2);
+      pf.push(new THREE.Vector3(
+        uu*CW/2 + Math.sin(tt*6+ph3)*tt*.22,
+        vv*CH/2 + Math.cos(tt*5+ph3)*tt*.20,
+        drape(Math.max(-1,Math.min(1,uu)),Math.max(-1,Math.min(1,vv))) + tt*tt*.75 + Math.sin(tt*7+ph3)*tt*.18
       ));
     }
-    var curve=new THREE.CatmullRomCurve3(pts,true,'centripetal');
-    var rad=fine ? .0085+Math.random()*.006 : .019+Math.random()*.013;
-    var tgeo=new THREE.TubeGeometry(curve,SEG,rad,4,true);
-    var tmat=new THREE.MeshStandardMaterial({
-      color:STRAND_COLORS[si%STRAND_COLORS.length],
-      roughness:.99, metalness:0,
-      transparent:true, opacity:fine?.7:.95
-    });
-    strandMats.push(tmat);
-    knotGroup.add(new THREE.Mesh(tgeo,tmat));
+    addStrand(pf, .0095+Math.random()*.006, STRAND_COLORS[f%STRAND_COLORS.length], .4,
+      {ax:'fuzz', dx:(Math.random()-.5)*1.1, dy:(Math.random()-.5)*1.1, dz:(Math.random()-.5)*.8, rz:(Math.random()-.5)*.35});
   }
-  knotGroup.position.set(0,0,2);
-  knotGroup.rotation.x=-.55;
+
+  /* ---- the shadow the cloth casts on itself ----------------------------
+     The single thing that separates a weave from a printed pattern is that
+     you can see darkness through it. This is a soft, drape-following plane
+     sitting just behind the sett: light falls on the crowns of the threads,
+     and the gaps between them open onto shade instead of onto the page. */
+  (function(){
+    var c=document.createElement('canvas'); c.width=c.height=512;
+    var g=c.getContext('2d');
+    var grd=g.createRadialGradient(256,256,10,256,256,252);
+    grd.addColorStop(0,   'rgba(46,28,16,.80)');
+    grd.addColorStop(.46, 'rgba(52,33,19,.66)');
+    grd.addColorStop(.78, 'rgba(60,39,24,.26)');
+    grd.addColorStop(1,   'rgba(64,42,26,0)');
+    g.fillStyle=grd; g.fillRect(0,0,512,512);
+    var tex=new THREE.CanvasTexture(c);
+    var gseg=TOUCH?18:28;
+    var geo=new THREE.PlaneGeometry(CW*1.30, CH*1.34, gseg, Math.round(gseg*.72));
+    var pos=geo.attributes.position;
+    for(var vi=0; vi<pos.count; vi++){
+      var uu=pos.getX(vi)/(CW*.65), vv=pos.getY(vi)/(CH*.67);
+      pos.setZ(vi, drape(Math.max(-1,Math.min(1,uu)), Math.max(-1,Math.min(1,vv))) - .40);
+    }
+    geo.computeVertexNormals();
+    clothShadeMat=new THREE.MeshBasicMaterial({
+      map:tex, transparent:true, depthWrite:false, fog:false, opacity:.5
+    });
+    clothShade=new THREE.Mesh(geo, clothShadeMat);
+    clothShade.renderOrder=-2;
+    clothGroup.add(clothShade);
+
+    /* and the shadow the whole panel throws onto the page behind it —
+       offset away from the window, softer, and further back, so the cloth
+       reads as an object lying above the paper rather than printed on it */
+    var c2=document.createElement('canvas'); c2.width=c2.height=512;
+    var g2=c2.getContext('2d');
+    var gr2=g2.createRadialGradient(256,256,8,256,256,254);
+    gr2.addColorStop(0,   'rgba(74,48,29,.42)');
+    gr2.addColorStop(.42, 'rgba(78,52,32,.30)');
+    gr2.addColorStop(.75, 'rgba(84,57,36,.10)');
+    gr2.addColorStop(1,   'rgba(84,57,36,0)');
+    g2.fillStyle=gr2; g2.fillRect(0,0,512,512);
+    castMat=new THREE.MeshBasicMaterial({
+      map:new THREE.CanvasTexture(c2), transparent:true, depthWrite:false, fog:false, opacity:.42
+    });
+    var cast=new THREE.Mesh(new THREE.PlaneGeometry(CW*1.55, CH*1.55), castMat);
+    cast.position.set(-.62,-.72,-1.9);
+    cast.renderOrder=-3;
+    clothGroup.add(cast);
+  })();
+
+  clothGroup.position.set(0,0,2);
+  clothGroup.rotation.x=-.30;
+  clothGroup.rotation.y=.22;
+  clothGroup.rotation.z=-.075;
 
   /* dust particles */
   var N=TOUCH?750:1600;
@@ -1696,16 +1937,19 @@ try{
     }
     return keys[keys.length-1][1];
   }
-  var opKeys =[[0,.95],[.14,.6],[.3,.2],[.55,.15],[.72,.4],[.86,.34],[1,.22]];
+  var opKeys = TOUCH
+    ? [[0,.80],[.09,.40],[.22,.14],[.42,.07],[.66,.06],[.84,.08],[1,.10]]
+    : [[0,.92],[.09,.44],[.22,.15],[.42,.07],[.66,.06],[.84,.085],[1,.11]];
   var introS={v:REDUCED?1:.55};
-  var unravel=[];
-  for(var ui=0;ui<NSTR;ui++) unravel.push(((ui%5)-2)*.075+(Math.random()-.5)*.03);
-  var yKeys  =[[0,0],[.18,4.5],[.35,7],[.6,6],[.78,1.5],[1,-3]];
+  /* the panel is measured across its own widest reach, fringe and all, so
+     a phone sees the whole weave at a size worth looking at */
+  var EXTW=CW*1.62, EXTH=CH*1.36;
+  var yKeys  =[[0,0],[.10,3.4],[.26,7.2],[.6,6],[.78,1.5],[1,-3]];
   var sKeys  =[[0,1],[.2,1.12],[.45,.8],[.75,.95],[1,.85]];
-  /* the ring is sized to the sheet, so a narrow screen sees the whole weave */
+  var CLOTH_BASE = TOUCH ? .96 : .74;
   function fitScale(){
     var vh2=2*14*Math.tan(camera.fov*Math.PI/360);
-    return Math.min(1,(vh2*camera.aspect)/11.3);
+    return CLOTH_BASE*Math.min((vh2*camera.aspect)/EXTW, vh2/EXTH);
   }
   var zRot   =[[0,0],[1,2.4]];
 
@@ -1716,6 +1960,18 @@ try{
   var clock=new THREE.Clock();
   var lastSY=window.scrollY||0, rimBoost=0;
   var running=true;
+  /* If the machine cannot hold the sheen, it loses the sheen — never the
+     frame rate. Measured over the first ninety frames, once only. */
+  var perfN=0, perfT=0, perfLast=0, perfDone=false;
+  function easeTheLoad(){
+    perfDone=true;
+    for(var q=0;q<strandMats.length;q++){
+      var m=strandMats[q];
+      if(m.sheen!==undefined && m.sheen>0){ m.sheen=0; m.roughness=.78; m.needsUpdate=true; }
+    }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 1.2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
   document.addEventListener('visibilitychange', function(){ running=!document.hidden; });
 
   function frame(){
@@ -1728,26 +1984,35 @@ try{
 
     px+=(tx-px)*.045; py+=(ty-py)*.045;
 
-    /* the wreath warms, never glints, as you drift faster */
+    /* the cloth warms, never glints, as you drift faster */
     var sy=window.scrollY||0;
     var dv=Math.min(3, Math.abs(sy-lastSY)*.015); lastSY=sy;
     rimBoost+=(dv-rimBoost)*.05;
     rim.intensity=.7+rimBoost*.35;
     key.intensity=.85+rimBoost*.12;
 
-    knotGroup.rotation.x=-.55+py*.28+Math.sin(t*.2)*.05;
-    knotGroup.rotation.y=px*.4+Math.sin(t*.13)*.08;
-    knotGroup.rotation.z=lerpKeys(zRot,p)*.6+t*.045;
-    knotGroup.position.y=lerpKeys(yKeys,p)+Math.sin(t*.35)*.25;
-    knotGroup.position.x=px*1.6;
-    var s=lerpKeys(sKeys,p)*introS.v*fitScale(); knotGroup.scale.setScalar(s);
+    /* the cloth breathes on the loom — the whole panel lifts and settles
+       as though air were moving through the atelier */
+    clothGroup.rotation.x=-.30+py*.26+Math.sin(t*.21)*.045;
+    clothGroup.rotation.y=.22+px*.38+Math.sin(t*.13)*.07;
+    clothGroup.rotation.z=-.075+lerpKeys(zRot,p)*.34+Math.sin(t*.17)*.02;
+    clothGroup.position.y=lerpKeys(yKeys,p)+Math.sin(t*.35)*.22;
+    clothGroup.position.x=px*1.6;
+    var s=lerpKeys(sKeys,p)*introS.v*fitScale(); clothGroup.scale.setScalar(s);
     var wop=lerpKeys(opKeys,p)*Math.min(1,introS.v*1.6);
-    for(var mi=0;mi<strandMats.length;mi++) strandMats[mi].opacity=wop;
-    /* the wreath slowly unravels as the story unwinds */
-    for(var ci=0;ci<knotGroup.children.length;ci++){
-      knotGroup.children[ci].rotation.z=p*unravel[ci]*3;
-      knotGroup.children[ci].position.z=p*unravel[ci]*4;
+    for(var mi=0;mi<strandMats.length;mi++) strandMats[mi].opacity=wop*(strandInfo[mi].ax==='fuzz'?.6:1);
+    /* and as the story unwinds, the weave gives: weft slides out of the
+       shed, warp splays, the cloth goes back to being thread */
+    var un=Math.pow(p,.75);
+    for(var ci=0;ci<strandMeshes.length;ci++){
+      var inf=strandInfo[ci], ch=strandMeshes[ci];
+      ch.position.x=un*inf.dx; ch.position.y=un*inf.dy; ch.position.z=un*inf.dz;
+      ch.rotation.z=un*inf.rz;
     }
+    /* the shade goes with the cloth, and lets go faster than it does —
+       once the weave opens there is nothing left to cast it */
+    if(clothShadeMat) clothShadeMat.opacity=wop*.92*(1-un*.85);
+    if(castMat) castMat.opacity=wop*.46*(1-un*.9);
 
     camera.position.x=px*1.2; camera.position.y=-py*.9;
     camera.lookAt(0,0,0);
@@ -1762,6 +2027,13 @@ try{
     });
 
     renderer.render(scene,camera);
+
+    if(!perfDone){
+      var now=performance.now();
+      if(perfLast){ perfT+=now-perfLast; perfN++; }
+      perfLast=now;
+      if(perfN>=90){ if(perfT/perfN>26) easeTheLoad(); else perfDone=true; }
+    }
   }
   frame();
 
@@ -1914,10 +2186,17 @@ if(HAS_GSAP && HAS_ST && !REDUCED){
         end:function(){ return '+=' + (dist()+window.innerHeight*.2); },
         pin:true, scrub:1, invalidateOnRefresh:true, anticipatePin:1, refreshPriority:10,
         onToggle:function(self){ frac.style.opacity=self.isActive?'.78':'0'; },
-        onUpdate:function(self){
-          var n=Math.min(4,1+Math.floor(self.progress*4.15));
+        onUpdate:function(){
+          /* whichever piece is nearest the middle of the room is the one
+             the counter names — not a guess from raw scroll progress */
+          var mid=window.innerWidth/2, best=1, bd=1e9;
+          [].forEach.call(document.querySelectorAll('.piece'), function(pc,pi){
+            var r=pc.querySelector('.piece-art').getBoundingClientRect();
+            var d=Math.abs(r.left+r.width/2-mid);
+            if(d<bd){ bd=d; best=pi+1; }
+          });
           var b=frac.querySelector('b');
-          if(b.textContent!=='0'+n) b.textContent='0'+n;
+          if(b.textContent!=='0'+best) b.textContent='0'+best;
         }
       }});
     [].forEach.call(document.querySelectorAll('.piece'), function(piece){
