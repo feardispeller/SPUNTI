@@ -1,0 +1,6 @@
+# vendored libraries and the built document are generated / third-party:
+# keep them out of diffs and out of language statistics.
+vendor/*.js       linguist-vendored -diff
+dist/index.html   linguist-generated -diff
+src/assets/*.webp binary
+public/og-image.jpg binary

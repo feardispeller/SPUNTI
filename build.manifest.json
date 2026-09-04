@@ -1,0 +1,57 @@
+{
+  "entry": "src/index.html",
+  "css": "src/styles/site.css",
+  "schema": "src/meta/schema.json",
+  "routerHead": "src/js/00-router-head.js",
+  "app": [
+    "src/js/01-motion.js",
+    "src/js/02-catalogue.js",
+    "src/js/03-photo-stage.js",
+    "src/js/04-lingua.js",
+    "src/js/05-smooth-scroll.js",
+    "src/js/06-three-atmosphere.js",
+    "src/js/07-theme-journey.js",
+    "src/js/08-choreography.js",
+    "src/js/09-menu.js",
+    "src/js/10-cursor.js",
+    "src/js/11-lente.js",
+    "src/js/12-piccoli-table.js",
+    "src/js/13-fitting-form.js",
+    "src/js/14-router.js",
+    "src/js/15-lingua-boot.js"
+  ],
+  "vendor": [
+    "vendor/gsap.min.js",
+    "vendor/scrolltrigger.min.js",
+    "vendor/three.min.js",
+    "vendor/lenis.min.js"
+  ],
+  "assets": [
+    {
+      "name": "photography.webp",
+      "mime": "image/webp",
+      "path": "src/assets/photography.webp"
+    },
+    {
+      "name": "cloth-lana.webp",
+      "mime": "image/webp",
+      "path": "src/assets/cloth-lana.webp"
+    },
+    {
+      "name": "cloth-lino.webp",
+      "mime": "image/webp",
+      "path": "src/assets/cloth-lino.webp"
+    },
+    {
+      "name": "cloth-trap.webp",
+      "mime": "image/webp",
+      "path": "src/assets/cloth-trap.webp"
+    },
+    {
+      "name": "cloth-cera.webp",
+      "mime": "image/webp",
+      "path": "src/assets/cloth-cera.webp"
+    }
+  ],
+  "out": "dist/index.html"
+}

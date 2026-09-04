@@ -1,0 +1,35 @@
+{
+  "name": "Commission",
+  "description": "One fitting, sent from the Punti Piccoli fitting form. The visitor has already chosen everything and measured their animal; this is the whole conversation-starter, arriving complete. There are no prices on the site, so every one of these rows is a person waiting for Sandra to write back.",
+  "type": "object",
+  "properties": {
+    "status":       { "type": "string", "enum": ["new", "replied", "quoted", "cutting", "sewing", "ready", "delivered", "closed"], "default": "new", "description": "Where this commission stands. Everything starts at 'new'." },
+
+    "from_name":    { "type": "string", "description": "The person's name, as they typed it." },
+    "reply_to":     { "type": "string", "description": "Email or phone. The form accepts either and validates loosely on purpose — a phone number written any way a person writes it still gets through." },
+    "language":     { "type": "string", "enum": ["en", "it"], "description": "The language they were reading in. Reply in this one." },
+    "clinic":       { "type": "string", "description": "From the QR code's ?c= parameter. Empty means they arrived some other way — worth knowing which posters are working." },
+
+    "animal_name":  { "type": "string" },
+    "species":      { "type": "string", "enum": ["dog", "cat"] },
+
+    "garment_key":  { "type": "string", "enum": ["coat", "cape", "collar"], "description": "Stable key. Group and count on this." },
+    "cloth_key":    { "type": "string", "enum": ["lana", "lino", "trap", "cera"], "description": "lana=boiled wool, lino=brushed linen, trap=quilted cotton, cera=waxed canvas." },
+    "trim_key":     { "type": "string", "enum": ["cuoio", "miele", "bruno"], "description": "cuoio=vegetable-tanned, miele=honey, bruno=walnut." },
+    "for_owner_key":{ "type": "string", "enum": ["sciarpa", "pochette", "nastro", ""], "description": "The matching piece for the owner, in the same cloth. Empty means they took the animal's piece alone — the pairing is the whole idea, so a run of empties is a signal about the page, not about the customers." },
+
+    "garment":      { "type": "string", "description": "Human label in the visitor's language. Display only — never group on this." },
+    "cloth":        { "type": "string", "description": "Human label. Display only." },
+    "trim":         { "type": "string", "description": "Human label. Display only." },
+    "for_owner":    { "type": "string", "description": "Human label. Display only." },
+
+    "neck_cm":      { "type": "number", "description": "22–52. The tape on the drawing opens with this number and the animal's neck thickens with it." },
+    "chest_cm":     { "type": "number", "description": "30–86. Drives the garment's depth down the flank." },
+    "back_cm":      { "type": "number", "description": "22–70. Nape to tail — sets the length of the cut." },
+
+    "subject":      { "type": "string", "description": "The letter's subject line as the page composed it." },
+    "message":      { "type": "string", "description": "The letter body the page composed, in the visitor's language. It reads as a note from them to Sandra." },
+    "notes":        { "type": "string", "description": "Sandra's own notes. Not sent by the form — hers to fill in." }
+  },
+  "required": ["from_name", "reply_to", "species", "garment_key", "cloth_key", "trim_key", "neck_cm", "chest_cm", "back_cm"]
+}

@@ -1,0 +1,20 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  watch:
+    image: node:22-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "node build.mjs && node scripts/watch.mjs"
+    restart: unless-stopped

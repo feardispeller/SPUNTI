@@ -1,0 +1,14 @@
+{
+  "name": "punti-e-spunti",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Punti e Spunti — atelier of Alessandra Guetta, Milano. One self-contained document, built from source.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs --check",
+    "dev": "node build.mjs && node scripts/serve.mjs",
+    "watch": "node scripts/watch.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
