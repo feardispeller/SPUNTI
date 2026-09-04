@@ -1,0 +1,58 @@
+name: build
+
+# The repo's promise: dist/index.html is always exactly what src/ + vendor/
+# produce. This job breaks the build if someone edits dist/ by hand or
+# forgets to rebuild after touching a module.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Build
+        run: node build.mjs
+
+      - name: dist/ must match src/
+        run: |
+          if ! git diff --quiet -- dist/; then
+            echo "::error::dist/ is stale. Run 'npm run build' and commit the result."
+            git diff --stat -- dist/
+            exit 1
+          fi
+          echo "dist/ is in sync with src/"
+
+      - name: Runtime must not depend on any CDN
+        run: |
+          # The site is scanned from a QR code on clinic wifi. Nothing that
+          # makes the page *work* may live on another origin: no external
+          # <script>, no external stylesheet except Google Fonts (which has a
+          # local fallback stack). Remote photographs are allowed but counted
+          # below, because a missing frame removes itself gracefully.
+          if grep -oE '<script[^>]+src="https?://[^"]+"' dist/index.html; then
+            echo "::error::external <script> found — the runtime must be inlined"; exit 1
+          fi
+          grep -oE '<link[^>]+rel="stylesheet"[^>]+href="https?://[^"]+"' dist/index.html \
+            | grep -v 'fonts.googleapis.com' > /tmp/css.txt || true
+          if [ -s /tmp/css.txt ]; then
+            echo "::error::external stylesheet found:"; cat /tmp/css.txt; exit 1
+          fi
+          echo "runtime is fully self-contained"
+
+      - name: Photography status
+        run: |
+          # Pre-launch: run scripts/fetch-photography.sh and set
+          # PHOTO_SOURCE='local' in src/js/02-catalogue.js to bring these home.
+          n=$(grep -oE 'https://d[0-9a-z]+\.cloudfront\.net/[^"'"'"']+' dist/index.html | sort -u | wc -l)
+          src=$(grep -oE "PHOTO_SOURCE *= *'[a-z]+'" src/js/02-catalogue.js | head -1)
+          echo "$src · $n photograph(s) still on the generation CDN"
+          if [ "$n" -gt 0 ]; then
+            echo "::warning::$n photograph(s) still remote — run scripts/fetch-photography.sh before launch"
+          fi

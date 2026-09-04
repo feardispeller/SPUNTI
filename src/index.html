@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>@@ROUTER_HEAD@@</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Punti e Spunti — Atelier of Handwoven Bags · Milano</title>
+<meta name="description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano. Punti e Spunti.">
+<meta name="theme-color" content="#F2E6D8">
+<link rel="canonical" href="https://puntiespunti.it/">
+
+<!-- social cards — replace the absolute URLs with the live domain -->
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="Punti e Spunti">
+<meta property="og:locale"      content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:url"         content="https://puntiespunti.it/">
+<meta property="og:title"       content="Punti e Spunti — Atelier of Handwoven Bags · Milano">
+<meta property="og:description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano.">
+<meta property="og:image"       content="https://puntiespunti.it/og-image.jpg">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"   content="Punti e Spunti — handwoven linen on the loom.">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Punti e Spunti — Atelier of Handwoven Bags · Milano">
+<meta name="twitter:description" content="Woven by women's hands, for lives lived slowly. An atelier of artisanal bags — Toscana · Milano.">
+<meta name="twitter:image"       content="https://puntiespunti.it/og-image.jpg">
+
+<script type="application/ld+json">@@SCHEMA@@</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2E6D8'/%3E%3Cpath d='M46 19c0-7-9-10-16-8-8 2-11 11-4 16 7 5 19 6 23 13 4 8-5 15-15 14-7-1-12-5-13-10' fill='none' stroke='%23B0562F' stroke-width='4.6' stroke-dasharray='7.5 5.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>@@CSS@@</style>
+</head>
+<body>
+<!-- ============ preloader ============ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pl-word" id="plWord"><i class="pl-s" id="plS">S</i><span class="pl-p" id="plP">PUNTI</span></div>
+  <div class="pl-tag stitch-label" id="plTag"><i class="nm-st"></i><span>Punti e <span class="nm-s">S</span>punti</span><i class="nm-st"></i></div>
+  <div class="pl-count" id="plCount">000</div>
+  <div class="pl-line"><i id="plBar"></i></div>
+  <div class="pl-veil" id="plVeil"></div>
+</div>
+
+<canvas id="gl"></canvas>
+<div class="scrim" aria-hidden="true"></div>
+<div class="vignette" id="vignette" aria-hidden="true"></div>
+<div class="fibre" aria-hidden="true"></div>
+<div class="paper" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ nav ============ -->
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#hero" data-hover>PUNTI E <span class="nv-s">S</span>PUNTI</a>
+  <nav class="nav-links label">
+    <a href="#piccoli" data-hover>Su Misura</a>
+    <a href="#collection" data-hover>Collection</a>
+    <a href="#craft" data-hover>Craft</a>
+    <a href="#atelier" data-hover>Atelier</a>
+  </nav>
+  <div style="display:flex;align-items:center;">
+    <button class="lang" id="langToggle" data-hover aria-label="Switch language">
+      <span data-lang="en">EN</span><i>/</i><span data-lang="it">IT</span>
+    </button>
+    <button class="menu-toggle label" id="menuToggle" data-hover aria-label="Open menu" aria-expanded="false">
+      <span id="menuWord">Menu</span>
+      <span class="mt-icon"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ menu overlay ============ -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-links">
+    <a href="#hero" data-hover><span class="ml-inner"><em>00</em><span class="ml-word">Overture</span></span></a>
+    <a href="#piccoli" data-hover><span class="ml-inner"><em>01</em><span class="ml-word">Punti Piccoli</span></span></a>
+    <a href="#collection" data-hover><span class="ml-inner"><em>02</em><span class="ml-word">The Collection</span></span></a>
+    <a href="#craft" data-hover><span class="ml-inner"><em>03</em><span class="ml-word">The Craft</span></span></a>
+    <a href="#atelier" data-hover><span class="ml-inner"><em>04</em><span class="ml-word">The Atelier</span></span></a>
+    <a href="#footer-sec" data-hover><span class="ml-inner"><em>05</em><span class="ml-word">Correspondence</span></span></a>
+  </nav>
+  <div class="menu-foot label">
+    <span>Toscana — Milano</span>
+    <span id="clockMenu">Milano —</span>
+    <span>Est. MMXVI</span>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"><span class="cursor-label" id="cursorLabel"></span></div>
+<svg class="thread" id="thread" aria-hidden="true">
+  <polyline class="t3"></polyline><polyline class="t2"></polyline><polyline class="t1"></polyline>
+</svg>
+<div class="needle" id="needle" aria-hidden="true">
+  <svg viewBox="0 0 40 40">
+    <path d="M38 20 L13 18.35 L13 21.65 Z" fill="currentColor"/>
+    <path d="M13 20 L5.4 20" stroke="currentColor" stroke-width="3.3" stroke-linecap="round"/>
+    <ellipse cx="8.9" cy="20" rx="2.4" ry="1.02" fill="var(--bg)"/>
+  </svg>
+</div>
+
+<main id="main">
+
+  <!-- ============ hero ============ -->
+  <section id="hero" data-bg="#F2E6D8" data-ink="#3A2A22" data-line="rgba(58,42,34,.14)">
+    <div class="hero-frame" aria-hidden="true"><i class="fT"></i><i class="fR"></i><i class="fB"></i><i class="fL"></i></div>
+    <p class="hero-kicker label">Atelier — Est. MMXVI &nbsp;·&nbsp; Toscana — Milano</p>
+    <h1 class="hero-title" id="heroTitle" aria-label="Punti e Spunti">
+      <span class="ht-line"><span class="ht-word"><span class="ht-s">S</span>PUNTI</span></span>
+    </h1>
+    <p class="ht-name stitch-label" id="htName"><i class="nm-st" aria-hidden="true"></i><span class="nm-t">Punti e <span class="nm-s">S</span>punti</span><i class="nm-st" aria-hidden="true"></i></p>
+    <p class="hero-sub hs-door">Two kinds of commission,<br>one pair of hands.</p>
+    <p class="hero-sub hs-picc">Made to measure for your animal,<br>and for you.</p>
+    <p class="hero-sub hs-coll">Bags and small leather,<br>made one at a time.</p>
+    <div class="hero-meta">
+      <span class="label hero-edge">Nº 001 — Overture</span>
+      <div class="hero-scroll">
+        <span class="label">Scroll to drift</span>
+        <span class="hs-line"><i></i></span>
+      </div>
+      <span class="label hero-edge">Handmade, always</span>
+    </div>
+  </section>
+
+
+  <!-- ============ the door — two houses, one pair of hands ============ -->
+  <section class="pic-door" id="door" data-bg="#F0E3D2" data-ink="#3A2A22" data-line="rgba(58,42,34,.15)">
+    <div class="door-lead">
+      <span class="label" id="doorKick">Due case, due mani</span>
+      <p id="doorLead">Sandra cuts for animals, and for the people who walk them.
+        Two kinds of commission, one pair of hands. Where would you like to begin?</p>
+    </div>
+    <div class="door-grid">
+      <button type="button" class="door-card" data-route="piccoli" data-hover>
+        <span class="shot" style="--c:0" aria-hidden="true"></span>
+        <span class="door-body">
+          <span class="label">Per loro</span>
+          <h3>Punti Piccoli</h3>
+          <p id="doorP1">A coat cut for one animal and nothing else — measured by hand,
+            drawn once, and never cut again.</p>
+          <span class="go"><i id="doorGo1">Take the measurements</i> <svg viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h22M18 1l4 3-4 3"/></svg></span>
+        </span>
+      </button>
+      <button type="button" class="door-card" data-route="collezione" data-hover>
+        <span class="shot" style="--c:2" aria-hidden="true"></span>
+        <span class="door-body">
+          <span class="label">Per voi</span>
+          <h3>La Collezione</h3>
+          <p id="doorP2">Bags and small leather, made one at a time on the bench
+            in Milano. The work she began with.</p>
+          <span class="go"><i id="doorGo2">See the collection</i> <svg viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h22M18 1l4 3-4 3"/></svg></span>
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ punti piccoli — made to measure for animals ============ -->
+  <section id="piccoli" data-bg="#EFE1CE" data-ink="#3F2C22" data-line="rgba(63,44,34,.16)">
+    <div class="pic-wrap">
+      <div class="sec-label label">Su Misura — 01</div>
+      <h2 class="pic-title"><span class="rl"><span class="it">Punti Piccoli.</span></span></h2>
+      <p class="pic-lede">A coat cut for one animal and nothing else — and, if you like, something
+        for you in the same cloth. Measured by hand, drawn once, and never cut again.</p>
+
+      <p class="pic-welcome"><i></i><span id="picWelcome">She measured them at the clinic. Here is what she can make.</span></p>
+
+      <div class="pic-table">
+        <div class="pic-stage">
+          <div class="pic-shots">
+            <figure class="shot" style="--c:0"><figcaption>Il cappotto — Bice</figcaption></figure>
+            <figure class="shot" style="--c:1"><figcaption>Il collare — Nino</figcaption></figure>
+            <figure class="shot" style="--c:2"><figcaption>La coppia — su misura</figcaption></figure>
+          </div>
+
+          <div class="pic-species" role="tablist" aria-label="Choose an animal">
+            <button type="button" class="sp on" data-sp="dog" data-hover role="tab" aria-selected="true">
+              <svg viewBox="130 110 324 300" aria-hidden="true">
+                <path class="sp-leg" d="M272 268 L270 392"/>
+                <path class="sp-leg" d="M420 262 C428 300 414 318 412 340 L410 392"/>
+                <path class="sp-tail" d="M430 208 C458 192 472 166 466 142"/>
+                <path d="M142 184 C136 176 139 166 148 162 C157 157 163 149 167 140 C171 129 179 121 190 121 C203 121 211 132 213 148 C218 155 227 161 238 168 C248 176 254 186 258 196 C300 184 364 182 414 196 C430 202 438 220 436 244 C434 262 426 274 414 280 C372 290 314 290 274 280 C262 274 254 258 252 240 C250 220 242 206 228 198 C210 192 186 191 166 190 C155 190 146 188 142 184 Z"/><path class="sp-ear" d="M194 124 C210 114 227 124 227 144 C227 161 217 177 203 181 C196 169 192 145 194 124 Z"/></svg>
+              <em>Il Cane</em></button>
+            <button type="button" class="sp"    data-sp="cat" data-hover role="tab" aria-selected="false">
+              <svg viewBox="148 110 336 300" aria-hidden="true">
+                <path class="sp-leg" d="M290 280 L288 392"/>
+                <path class="sp-leg" d="M412 272 C419 302 407 320 405 342 L403 392"/>
+                <path class="sp-tail" d="M422 224 C456 216 474 192 476 166 C477 150 468 141 458 145"/>
+                <path d="M156 214 C150 206 154 196 164 192 C172 188 178 182 182 174 C178 162 176 152 180 148 L184 122 L205 147 L223 127 L229 153 C235 163 239 173 245 181 C259 191 270 200 278 212 C316 202 368 202 408 214 C422 220 428 236 426 256 C424 272 416 282 404 286 C366 294 316 294 286 286 C276 282 270 268 268 252 C266 236 258 224 246 218 C226 212 190 212 168 214 C162 214 158 214 156 214 Z"/></svg>
+              <em>Il Gatto</em></button>
+          </div>
+
+          <div class="pic-glwrap" id="picGLWrap" hidden>
+            <canvas id="picGL"></canvas>
+            <svg class="ph-lines" id="picLines" aria-hidden="true"></svg>
+            <div class="pic-handles" id="picHandles">
+              <button type="button" class="ph" data-m="neck"  data-hover role="slider"
+                      aria-valuemin="22" aria-valuemax="52" tabindex="0"><b>38</b><u>Collo</u></button>
+              <button type="button" class="ph" data-m="chest" data-hover role="slider"
+                      aria-valuemin="30" aria-valuemax="86" tabindex="0"><b>62</b><u>Torace</u></button>
+              <button type="button" class="ph" data-m="back"  data-hover role="slider"
+                      aria-valuemin="22" aria-valuemax="70" tabindex="0"><b>48</b><u>Dorso</u></button>
+            </div>
+            <p class="pic-turn label" id="picTurn">Drag to turn the form · pull a tape to measure</p>
+            <div class="pic-plate3" id="picPlate3" aria-live="polite">
+              <span class="pp3-name"></span>
+              <span class="pp3-spec label"></span>
+              <span class="pp3-size label"></span>
+            </div>
+          </div>
+
+          <svg class="pic-svg" id="picSvg" viewBox="106 96 466 330" role="img"
+               aria-label="A drawing of an animal on the measuring table, with three tape measures you can pull">
+            <defs>
+              <pattern id="clLino" width="9" height="9" patternUnits="userSpaceOnUse">
+                <path d="M0 4.5H9M4.5 0V9" stroke="#7A5F3C" stroke-width=".9" opacity=".26"/>
+              </pattern>
+              <pattern id="clLana" width="7" height="7" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r=".9" fill="#FFF2DF" opacity=".3"/>
+                <circle cx="5.4" cy="5" r=".7" fill="#3A1E12" opacity=".16"/>
+              </pattern>
+              <pattern id="clTrap" width="22" height="22" patternUnits="userSpaceOnUse">
+                <path d="M-2 11 L11 -2 M11 24 L24 11 M-2 11 L11 24 M11 -2 L24 11"
+                      stroke="#5B3326" stroke-width="1" opacity=".3" fill="none"/>
+              </pattern>
+              <pattern id="clCera" width="8" height="8" patternUnits="userSpaceOnUse">
+                <path d="M-1 7 L7 -1 M1 9 L9 1" stroke="#2F3320" stroke-width=".9" opacity=".24"/>
+              </pattern>
+              <pattern id="phLana" width="78" height="78" patternUnits="userSpaceOnUse"><image id="imLana" width="78" height="78" preserveAspectRatio="xMidYMid slice"/></pattern>
+              <pattern id="phLino" width="78" height="78" patternUnits="userSpaceOnUse"><image id="imLino" width="78" height="78" preserveAspectRatio="xMidYMid slice"/></pattern>
+              <pattern id="phTrap" width="78" height="78" patternUnits="userSpaceOnUse"><image id="imTrap" width="78" height="78" preserveAspectRatio="xMidYMid slice"/></pattern>
+              <pattern id="phCera" width="78" height="78" patternUnits="userSpaceOnUse"><image id="imCera" width="78" height="78" preserveAspectRatio="xMidYMid slice"/></pattern>
+              <path id="mgPath" d="M300 250 Q350 256 396 248"></path>
+              <linearGradient id="picLight" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFF6E6" stop-opacity=".5"/>
+                <stop offset="1" stop-color="#FFF6E6" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <!-- the table she works on -->
+            <g class="pic-ground" aria-hidden="true">
+              <path class="pg-line" d="M112 404 H562"/>
+              <path class="pg-shadow" d="M180 404 Q 330 420 470 404 Q 330 414 180 404 Z"/>
+            </g>
+
+            <!-- the animal -->
+            <g class="an an-dog" id="anDog">
+              <g class="an-far">
+                <path class="an-leg" d="M296 272 L294 392"/>
+                <path class="an-leg" d="M402 268 C408 300 396 316 394 338 L392 392"/>
+              </g>
+              <path class="an-tail" d="M430 208 C458 192 472 166 466 142"/>
+              <path class="an-leg" d="M272 268 L270 392"/>
+              <path class="an-leg" d="M420 262 C428 300 414 318 412 340 L410 392"/>
+              <path class="an-body" d="M142 184
+                C136 176 139 166 148 162 C157 157 163 149 167 140
+                C171 129 179 121 190 121 C203 121 211 132 213 148
+                C218 155 227 161 238 168 C248 176 254 186 258 196
+                C300 184 364 182 414 196 C430 202 438 220 436 244
+                C434 262 426 274 414 280 C372 290 314 290 274 280
+                C262 274 254 258 252 240 C250 220 242 206 228 198
+                C210 192 186 191 166 190 C155 190 146 188 142 184 Z"/>
+              <path class="an-ear" d="M194 124 C210 114 227 124 227 144
+                C227 161 217 177 203 181 C196 169 192 145 194 124 Z"/>
+              <circle class="an-eye" cx="177" cy="155" r="3.5"/>
+            </g>
+
+            <g class="an an-cat" id="anCat">
+              <g class="an-far">
+                <path class="an-leg" d="M310 284 L308 392"/>
+                <path class="an-leg" d="M396 278 C402 306 392 320 390 340 L388 392"/>
+              </g>
+              <path class="an-tail" d="M422 224 C456 216 474 192 476 166 C477 150 468 141 458 145"/>
+              <path class="an-leg" d="M290 280 L288 392"/>
+              <path class="an-leg" d="M412 272 C419 302 407 320 405 342 L403 392"/>
+              <path class="an-body" d="M156 214
+                C150 206 154 196 164 192 C172 188 178 182 182 174
+                C178 162 176 152 180 148 L184 122 L205 147 L223 127 L229 153
+                C235 163 239 173 245 181 C259 191 270 200 278 212
+                C316 202 368 202 408 214 C422 220 428 236 426 256
+                C424 272 416 282 404 286 C366 294 316 294 286 286
+                C276 282 270 268 268 252 C266 236 258 224 246 218
+                C226 212 190 212 168 214 C162 214 158 214 156 214 Z"/>
+              <circle class="an-eye" cx="192" cy="196" r="3.2"/>
+              <path class="an-whisk" d="M158 208 L126 202 M158 213 L126 218 M159 218 L130 230"/>
+            </g>
+
+            <!-- the garment, drawn from her measurements -->
+            <!-- the default cut is written into the markup, so a visitor without
+                 JavaScript still sees her wearing the coat -->
+            <g class="pic-garment" id="picGarment" aria-hidden="true"
+               style="--cl:#A9573A;--clEdge:#5E2C18;--clTex:url(#clLana);--tr:#A9773F;--trDk:#6B4A2A">
+              <path class="gm-lining" id="gmLining" d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-body"   id="gmBody"   d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-tex"    id="gmTex"    d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-photo"  id="gmPhoto"  d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-sheen"  id="gmSheen"  d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-pipe"   id="gmPipe"   d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-pipeS"  id="gmPipeS"  d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-edge"   id="gmEdge"   d="M269 190.4 Q332.2 186.6 394.7 196.9 Q401.7 235.5 394.7 273.4 Q328.9 288.3 264.5 277.1 Q255.9 229.7 269 190.4 Z"></path>
+              <path class="gm-hem"    id="gmHem"    d="M395 267.4 Q329.2 282.3 264.8 271.1"></path>
+              <path class="gm-seam"   id="gmSeam"   d="M268.5 200.3 Q331.5 199.6 394.2 206.9"></path>
+              <!-- her name, worked into the flank -->
+              <text class="gm-mono" id="gmMono"><textPath id="gmMonoTP" href="#mgPath" startOffset="50%" text-anchor="middle"></textPath></text>
+              <!-- the facing: the collar turned back on itself, lining showing -->
+              <path class="gm-facing"  id="gmFacing"></path>
+              <path class="gm-facingE" id="gmFacingE"></path>
+              <!-- the belly band, and the buckle that takes up the slack -->
+              <path class="gm-strap"  id="gmStrap"></path>
+              <path class="gm-strapE" id="gmStrapE"></path>
+              <g class="gm-buckle" id="gmBuckle">
+                <rect id="gmBkR" rx="1.6"></rect><path id="gmBkP"></path>
+              </g>
+              <path class="gm-collar" id="gmCollar"></path>
+              <path class="gm-colhem" id="gmColHem"></path>
+              <g class="gm-tag" id="gmTag" style="display:none"><path id="gmTagP"></path><circle id="gmTagR"></circle></g>
+            </g>
+
+            <!-- three tapes. pull each one away from her to loosen it. -->
+            <!-- and the piece for her, cut from the same cloth -->
+            <g class="pic-pair" id="picPair">
+              <g class="pp pp-sciarpa" id="ppSciarpa">
+                <path class="pp-fringe" d="M120 330 l-14 4 M120 341 l-15 3 M120 352 l-14 4 M121 363 l-15 3 M121 374 l-14 4"/>
+                <path class="pp-body"   d="M120 322 L206 302 Q218 299 221 311 L229 350 Q231 362 219 365 L134 384 Q122 387 120 375 Z"/>
+                <path class="pp-tex"    d="M120 322 L206 302 Q218 299 221 311 L229 350 Q231 362 219 365 L134 384 Q122 387 120 375 Z"/>
+                <path class="pp-photo"  d="M120 322 L206 302 Q218 299 221 311 L229 350 Q231 362 219 365 L134 384 Q122 387 120 375 Z"/>
+                <path class="pp-pipe"   d="M120 322 L206 302 Q218 299 221 311 L229 350 Q231 362 219 365 L134 384 Q122 387 120 375 Z"/>
+                <path class="pp-fold"   d="M206 302 Q216 322 229 350 L196 358 Q188 328 206 302 Z"/>
+                <path class="pp-stitch" d="M126 330 L204 312"/>
+              </g>
+              <g class="pp pp-nastro" id="ppNastro">
+                <path class="pp-body"   d="M172 336 C146 310 124 340 150 352 C162 357 170 348 172 336 Z
+                                           M172 336 C198 310 220 340 194 352 C182 357 174 348 172 336 Z
+                                           M166 344 C158 364 150 374 139 382 L153 388 C166 376 172 360 174 346 Z
+                                           M178 344 C186 364 194 374 205 382 L191 388 C178 376 172 360 170 346 Z"/>
+                <path class="pp-tex"    d="M172 336 C146 310 124 340 150 352 C162 357 170 348 172 336 Z
+                                           M172 336 C198 310 220 340 194 352 C182 357 174 348 172 336 Z
+                                           M166 344 C158 364 150 374 139 382 L153 388 C166 376 172 360 174 346 Z
+                                           M178 344 C186 364 194 374 205 382 L191 388 C178 376 172 360 170 346 Z"/>
+                <path class="pp-photo"  d="M172 336 C146 310 124 340 150 352 C162 357 170 348 172 336 Z
+                                           M172 336 C198 310 220 340 194 352 C182 357 174 348 172 336 Z
+                                           M166 344 C158 364 150 374 139 382 L153 388 C166 376 172 360 174 346 Z
+                                           M178 344 C186 364 194 374 205 382 L191 388 C178 376 172 360 170 346 Z"/>
+                <path class="pp-pipe"   d="M172 336 C146 310 124 340 150 352 C162 357 170 348 172 336 Z
+                                           M172 336 C198 310 220 340 194 352 C182 357 174 348 172 336 Z"/>
+                <rect class="pp-knot" x="163" y="328" width="18" height="17" rx="4"/>
+              </g>
+              <g class="pp pp-pochette" id="ppPochette">
+                <path class="pp-body"   d="M128 308 L212 301 Q220 300 221 308 L227 366 Q228 374 220 375 L138 381 Q130 382 129 374 Z"/>
+                <path class="pp-tex"    d="M128 308 L212 301 Q220 300 221 308 L227 366 Q228 374 220 375 L138 381 Q130 382 129 374 Z"/>
+                <path class="pp-photo"  d="M128 308 L212 301 Q220 300 221 308 L227 366 Q228 374 220 375 L138 381 Q130 382 129 374 Z"/>
+                <path class="pp-pipe"   d="M128 308 L212 301 Q220 300 221 308 L227 366 Q228 374 220 375 L138 381 Q130 382 129 374 Z"/>
+                <path class="pp-fold"   d="M212 301 L227 366 L172 340 Z"/>
+                <path class="pp-stitch" d="M136 370 L214 363"/>
+              </g>
+              <text class="pp-mono" id="ppMono" x="174" y="345" text-anchor="middle"></text>
+            </g>
+
+            <g class="pic-plate" id="picPlate">
+              <path class="pp-rule" id="ppR1"></path>
+              <path class="pp-rule" id="ppR2"></path>
+              <text class="pp-name" id="ppName" text-anchor="middle"></text>
+              <text id="ppSpec" text-anchor="middle"></text>
+              <text id="ppSize" text-anchor="middle"></text>
+            </g>
+            <g class="tapes" id="picTapes"></g>
+          </svg>
+
+          <p class="pic-hint label" id="picHint">Pull a tape to measure — or use the arrow keys</p>
+        </div>
+
+        <aside class="pic-docket">
+          <div class="dk-head">
+            <span class="label dk-ttl">La Scheda — her measurements and her cloth</span>
+          </div>
+
+          <div class="dk-presets" id="dkPresets" role="group" aria-label="Start from a size she has cut before">
+            <span class="label dk-lg" id="dkLgP">She has cut these before</span>
+            <div class="dk-chips">
+              <button type="button" data-p="bice" data-hover><em>Bice</em><i class="label">levriero</i></button>
+              <button type="button" data-p="ciro" data-hover><em>Ciro</em><i class="label">bassotto</i></button>
+              <button type="button" data-p="nino" data-hover><em>Nino</em><i class="label">gatto</i></button>
+              <button type="button" data-p="olmo" data-hover><em>Olmo</em><i class="label">pastore</i></button>
+            </div>
+          </div>
+
+          <div class="dk-block">
+            <span class="label dk-lg" id="dkLgG">The garment</span>
+            <div class="dk-opts" id="dkGarments" role="radiogroup" aria-label="Choose a garment">
+              <button type="button" class="on" data-g="coat"   data-hover role="radio" aria-checked="true"><span class="pc" style="--i:0" aria-hidden="true"></span><em>Il Cappotto</em><i class="label">The coat</i></button>
+              <button type="button"           data-g="cape"   data-hover role="radio" aria-checked="false"><span class="pc" style="--i:1" aria-hidden="true"></span><em>La Mantella</em><i class="label">The cape</i></button>
+              <button type="button"           data-g="collar" data-hover role="radio" aria-checked="false"><span class="pc" style="--i:2" aria-hidden="true"></span><em>Il Collare</em><i class="label">The collar</i></button>
+            </div>
+          </div>
+          <div class="dk-block">
+            <span class="label dk-lg" id="dkLgC">The cloth</span>
+            <div class="dk-cloths" id="dkCloths" role="radiogroup" aria-label="Choose a cloth">
+              <button type="button" class="on" data-c="lana" data-hover role="radio" aria-checked="true"><i style="background:#A9573A"></i><em>Lana Bollita</em><span class="label">Boiled wool</span></button>
+              <button type="button"           data-c="lino" data-hover role="radio" aria-checked="false"><i style="background:#D8C1A0"></i><em>Lino Spazzolato</em><span class="label">Brushed linen</span></button>
+              <button type="button"           data-c="trap" data-hover role="radio" aria-checked="false"><i style="background:#C08A78"></i><em>Cotone Trapuntato</em><span class="label">Quilted cotton</span></button>
+              <button type="button"           data-c="cera" data-hover role="radio" aria-checked="false"><i style="background:#77754F"></i><em>Tela Cerata</em><span class="label">Waxed canvas</span></button>
+            </div>
+          </div>
+          <div class="dk-block">
+            <span class="label dk-lg" id="dkLgT">The trim</span>
+            <div class="dk-cloths dk-trims" id="dkTrims" role="radiogroup" aria-label="Choose a trim">
+              <button type="button" class="on" data-t="cuoio" data-hover role="radio" aria-checked="true"><i style="background:#A9773F"></i><em>Cuoio</em><span class="label">Vegetable-tanned</span></button>
+              <button type="button" data-t="miele" data-hover role="radio" aria-checked="false"><i style="background:#C79A63"></i><em>Miele</em><span class="label">Honey</span></button>
+              <button type="button" data-t="bruno" data-hover role="radio" aria-checked="false"><i style="background:#6B4A2A"></i><em>Bruno</em><span class="label">Walnut</span></button>
+            </div>
+          </div>
+          <div class="dk-block">
+            <span class="label dk-lg" id="dkLgW">And for you</span>
+            <div class="dk-opts" id="dkPair" role="radiogroup" aria-label="Choose a piece for yourself">
+              <button type="button" class="on" data-w="sciarpa" data-hover role="radio" aria-checked="true"><span class="pc" style="--i:3" aria-hidden="true"></span><em>La Sciarpa</em><i class="label">The scarf</i></button>
+              <button type="button" data-w="pochette" data-hover role="radio" aria-checked="false"><span class="pc" style="--i:4" aria-hidden="true"></span><em>La Pochette</em><i class="label">The pocket square</i></button>
+              <button type="button" data-w="nastro" data-hover role="radio" aria-checked="false"><span class="pc" style="--i:5" aria-hidden="true"></span><em>Il Nastro</em><i class="label">The hair ribbon</i></button>
+              <button type="button" data-w="none" data-hover role="radio" aria-checked="false"><svg viewBox="0 0 64 30" aria-hidden="true"><rect class="gi-gh" x="17" y="9" width="30" height="14" rx="2"/><path class="gi-tr" d="M25 16 H39"/></svg><em>Solo per lei</em><i class="label">Just for them</i></button>
+            </div>
+          </div>
+          <button type="button" class="dk-inspect" id="dkInspect" data-hover aria-pressed="false">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M13.4 13.4 18 18"/></svg>
+            <span>See the finished piece</span>
+          </button>
+
+          <label class="dk-name">
+            <span class="label">Her name</span>
+            <input type="text" id="dkName" maxlength="22" placeholder="Bice" autocomplete="off" spellcheck="false" data-hover>
+          </label>
+          
+          <p class="dk-fit" id="dkFit"><i></i><span></span></p>
+          <p class="dk-measured label">Don't have a tape? <b>Ask the clinic to measure.</b></p>
+          
+
+          
+
+          <form class="dk-form" id="dkForm" method="post" novalidate>
+            <div class="dk-f">
+              <label for="dkWho" class="label">Your name</label>
+              <input id="dkWho" name="from_name" type="text" autocomplete="name" required data-hover>
+            </div>
+            <div class="dk-f">
+              <label for="dkHow" class="label">Email or telephone</label>
+              <input id="dkHow" name="reply_to" type="text" inputmode="email"
+                     autocomplete="email" required data-hover>
+            </div>
+            <p class="dk-err" id="dkErr" hidden></p>
+            <button type="submit" class="dk-send" id="dkSend" data-hover>
+              <span>Send this to the atelier</span>
+              <svg viewBox="0 0 34 10" aria-hidden="true"><path d="M0 5h31M27 1l4 4-4 4"/></svg>
+            </button>
+            <p class="dk-note label">No prices here. She writes back, and the two of you decide.</p>
+          </form>
+
+          <div class="dk-sent" id="dkSent" hidden>
+            <p class="ds-h">Your docket is with her.</p>
+            <p class="ds-p">She writes back within a week — usually sooner. Nothing is cut until you have agreed it together.</p>
+          </div>
+        </aside>
+      </div>
+
+      <aside class="pic-clinic">
+        <div class="pc-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44"><path d="M22 6v32M6 22h32" /><circle cx="22" cy="22" r="19"/></svg>
+        </div>
+        <div class="pc-body">
+          <p class="label pc-lg">Measured at the clinic</p>
+          <blockquote class="pc-quote">A coat has to clear the shoulder and sit off the spine, or the
+            animal will not wear it twice. I take the three measurements myself, while they are
+            already on the table.</blockquote>
+          <p class="pc-cite label"><b>Ceci</b> — veterinary surgeon,
+            <span class="pc-clinicname">[ clinic name ]</span>, Milano</p>
+          <p class="pc-note">Ask at the desk on your next visit and we will measure them for you.
+            The three numbers go straight onto your docket — nothing to do at home, and no tape to buy.</p>
+        </div>
+      </aside>
+
+      <div class="pic-gallery empty" id="picGallery">
+        <figure><img alt="A dog in a boiled-wool coat" decoding="async" fetchpriority="low"><figcaption><em>Il Cappotto</em><span class="label">Lana bollita</span></figcaption></figure>
+        <figure><img alt="A cat in a brushed-linen cape" decoding="async" fetchpriority="low"><figcaption><em>La Mantella</em><span class="label">Lino spazzolato</span></figcaption></figure>
+        <figure><img alt="A handmade collar with a brass buckle" decoding="async" fetchpriority="low"><figcaption><em>Il Collare</em><span class="label">Lana e cuoio</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ collection ============ -->
+
+  <!-- ============ the hand-off, when both houses share one scroll ============ -->
+  <section class="pic-bridge" data-bg="#EEE0CB" data-ink="#3A2A22" data-line="rgba(58,42,34,.15)">
+    <span class="label" id="brKick">Lo stesso banco — the same bench</span>
+    <p id="brLine">The cloth she cuts a coat from is the cloth she cuts a bag from.
+      What follows is the other half of her work.</p>
+  </section>
+
+  <section id="collection" data-bg="#EDDFC9" data-ink="#3A2A22" data-line="rgba(58,42,34,.15)">
+    <div class="col-head">
+      <div class="sec-label label">The Collection — MMXXVI</div>
+      <h2><span class="rl">Four vessels,</span><span class="rl"><span class="thin">one unbroken thread.</span></span></h2>
+      <p class="col-hint label" id="colHint">Hold a piece — la lente rises · ×4</p>
+    </div>
+    <div class="col-cue label" id="colCue">Drift sideways&nbsp;&nbsp;⟶</div>
+
+    <div class="col-wrap" id="colWrap">
+      <div class="col-track" id="colTrack">
+
+        <article class="piece">
+          <span class="piece-num">01</span>
+          <div class="piece-inner">
+            <div class="piece-art" data-depth="1.15">
+              <!-- Nomad Tote — raffia -->
+              <svg viewBox="0 0 300 340" role="img" aria-label="The Nomad Tote">
+                <defs>
+                  <linearGradient id="raffia" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#DFC08F"/><stop offset=".55" stop-color="#C9A264"/><stop offset="1" stop-color="#A87E45"/>
+                  </linearGradient>
+                  <pattern id="weave1" width="14" height="14" patternUnits="userSpaceOnUse">
+                    <path d="M0 7 H14 M7 0 V14" stroke="#7A5A2E" stroke-width="1.1" opacity=".2"/>
+                    <path d="M0 0 H14 M0 14 H14" stroke="#F2E2BF" stroke-width="1" opacity=".25"/>
+                  </pattern>
+                </defs>
+                <path d="M96 118 C96 52 120 34 150 34 C180 34 204 52 204 118" fill="none" stroke="#6E3B1E" stroke-width="7" stroke-linecap="round"/>
+                <path d="M96 118 C96 60 122 42 150 42 C178 42 204 60 204 118" fill="none" stroke="#8A4E28" stroke-width="3" stroke-linecap="round"/>
+                <path d="M62 120 L238 120 L260 296 Q150 322 40 296 Z" fill="url(#raffia)"/>
+                <path d="M62 120 L238 120 L260 296 Q150 322 40 296 Z" fill="url(#weave1)"/>
+                <path d="M62 120 L238 120 L260 296 Q150 322 40 296 Z" fill="none" stroke="#5C3A16" stroke-width="2"/>
+                <path d="M40 296 Q150 322 260 296" fill="none" stroke="#4C2E10" stroke-width="3" opacity=".5"/>
+                <rect x="56" y="112" width="188" height="20" rx="9" fill="#8A4E28"/>
+                <rect x="56" y="112" width="188" height="20" rx="9" fill="none" stroke="#5C3A16" stroke-width="1.6"/>
+                <path d="M64 122 H236" stroke="#E9CD9B" stroke-width="1.4" stroke-dasharray="4 5" opacity=".85"/>
+                <path d="M72 150 Q150 168 228 150 M66 196 Q150 216 234 196 M58 246 Q150 268 242 246" fill="none" stroke="#7A5A2E" stroke-width="1.6" opacity=".5"/>
+                <ellipse cx="106" cy="205" rx="40" ry="72" fill="#FFF6E2" opacity=".07"/>
+              </svg>
+            </div>
+            <div class="piece-info">
+              <span class="label">Piece — 01</span>
+              <h3>The Nomad Tote</h3>
+              <p class="piece-mat">Sun-dried raffia · vegetable-tanned trim</p>
+              <p class="piece-note">Woven over six days in the Tuscan hills — no two carry the same light.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="piece">
+          <span class="piece-num">02</span>
+          <div class="piece-inner">
+            <div class="piece-art" data-depth="0.9">
+              <!-- La Riva Saddle — leather -->
+              <svg viewBox="0 0 300 340" role="img" aria-label="La Riva Saddle">
+                <defs>
+                  <linearGradient id="hide" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#A6653A"/><stop offset=".6" stop-color="#8A4E28"/><stop offset="1" stop-color="#63351A"/>
+                  </linearGradient>
+                  <linearGradient id="flap" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#B7744534"/><stop offset="0" stop-color="#B77445"/><stop offset="1" stop-color="#7C4522"/>
+                  </linearGradient>
+                </defs>
+                <path d="M84 128 C60 54 116 20 150 20 C184 20 240 54 216 128" fill="none" stroke="#4C2A12" stroke-width="6" stroke-linecap="round"/>
+                <path d="M54 150 Q54 122 84 122 L216 122 Q246 122 246 150 L246 252 Q246 300 190 300 L110 300 Q54 300 54 252 Z" fill="url(#hide)"/>
+                <path d="M54 150 Q54 122 84 122 L216 122 Q246 122 246 150 L246 252 Q246 300 190 300 L110 300 Q54 300 54 252 Z" fill="none" stroke="#3E2210" stroke-width="2"/>
+                <path d="M54 150 Q54 122 84 122 L216 122 Q246 122 246 150 L246 176 Q246 214 196 214 L104 214 Q54 214 54 176 Z" fill="url(#flap)"/>
+                <path d="M54 150 Q54 122 84 122 L216 122 Q246 122 246 150 L246 176 Q246 214 196 214 L104 214 Q54 214 54 176 Z" fill="none" stroke="#3E2210" stroke-width="2"/>
+                <path d="M62 206 Q150 222 238 206" fill="none" stroke="#E9CD9B" stroke-width="1.3" stroke-dasharray="4 5" opacity=".8"/>
+                <path d="M62 130 H238" stroke="#E9CD9B" stroke-width="1.2" stroke-dasharray="4 5" opacity=".6"/>
+                <rect x="138" y="196" width="24" height="42" rx="8" fill="#63351A" stroke="#3E2210" stroke-width="1.8"/>
+                <circle cx="150" cy="228" r="5.5" fill="#C9A05A" stroke="#8a6a30" stroke-width="1.4"/>
+                <ellipse cx="102" cy="168" rx="42" ry="34" fill="#FFF6E2" opacity=".06"/>
+              </svg>
+            </div>
+            <div class="piece-info">
+              <span class="label">Piece — 02</span>
+              <h3>La Riva Saddle</h3>
+              <p class="piece-mat">Full-grain leather · hand-burnished edge</p>
+              <p class="piece-note">Cut from a single hide, stitched with waxed linen — it darkens as it learns you.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="piece">
+          <span class="piece-num">03</span>
+          <div class="piece-inner">
+            <div class="piece-art" data-depth="1.25">
+              <!-- Ombra Bucket — indigo palm -->
+              <svg viewBox="0 0 300 340" role="img" aria-label="Ombra Bucket">
+                <defs>
+                  <linearGradient id="indigo" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#3D4B66"/><stop offset=".55" stop-color="#2C374F"/><stop offset="1" stop-color="#1D2536"/>
+                  </linearGradient>
+                  <pattern id="weave3" width="16" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M0 5 Q4 0 8 5 T16 5" fill="none" stroke="#5E7092" stroke-width="1.2" opacity=".5"/>
+                  </pattern>
+                </defs>
+                <path d="M150 26 C196 26 218 44 218 64 L212 84" fill="none" stroke="#8A6A30" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+                <path d="M150 26 C104 26 82 44 82 64 L88 84" fill="none" stroke="#8A6A30" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+                <path d="M74 96 Q150 66 226 96 L238 268 Q238 306 150 306 Q62 306 62 268 Z" fill="url(#indigo)"/>
+                <path d="M74 96 Q150 66 226 96 L238 268 Q238 306 150 306 Q62 306 62 268 Z" fill="url(#weave3)"/>
+                <path d="M74 96 Q150 66 226 96 L238 268 Q238 306 150 306 Q62 306 62 268 Z" fill="none" stroke="#131A28" stroke-width="2"/>
+                <path d="M74 96 Q150 128 226 96" fill="none" stroke="#131A28" stroke-width="2" opacity=".8"/>
+                <path d="M84 92 Q150 120 216 92" fill="none" stroke="#C9A05A" stroke-width="2.4" stroke-dasharray="1 7" stroke-linecap="round"/>
+                <circle cx="150" cy="122" r="10" fill="none" stroke="#C9A05A" stroke-width="3"/>
+                <path d="M150 132 C142 156 160 168 150 192" fill="none" stroke="#C9A05A" stroke-width="2.4" stroke-linecap="round"/>
+                <path d="M70 176 Q150 196 230 176 M66 226 Q150 248 234 226" fill="none" stroke="#131A28" stroke-width="1.5" opacity=".55"/>
+                <ellipse cx="110" cy="196" rx="36" ry="66" fill="#AFC0E0" opacity=".07"/>
+              </svg>
+            </div>
+            <div class="piece-info">
+              <span class="label">Piece — 03</span>
+              <h3>Ombra Bucket</h3>
+              <p class="piece-mat">Midnight-dyed wild palm · brass ring</p>
+              <p class="piece-note">Dyed at dusk in indigo drawn from the field behind the atelier.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="piece">
+          <span class="piece-num">04</span>
+          <div class="piece-inner">
+            <div class="piece-art" data-depth="1">
+              <!-- Vela Crescent — cotton cord -->
+              <svg viewBox="0 0 300 340" role="img" aria-label="Vela Crescent">
+                <defs>
+                  <linearGradient id="cotton" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#F0E6D2"/><stop offset=".6" stop-color="#DECFB2"/><stop offset="1" stop-color="#C4B08A"/>
+                  </linearGradient>
+                  <pattern id="weave4" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <path d="M0 6 H12" stroke="#A08B62" stroke-width="1.4" opacity=".4"/>
+                  </pattern>
+                </defs>
+                <path d="M76 160 C60 60 240 60 224 160" fill="none" stroke="#8F7648" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="76" cy="160" r="7" fill="#C4B08A" stroke="#6E5A34" stroke-width="2"/>
+                <circle cx="224" cy="160" r="7" fill="#C4B08A" stroke="#6E5A34" stroke-width="2"/>
+                <path d="M40 168 Q150 128 260 168 Q252 288 150 288 Q48 288 40 168 Z" fill="url(#cotton)"/>
+                <path d="M40 168 Q150 128 260 168 Q252 288 150 288 Q48 288 40 168 Z" fill="url(#weave4)"/>
+                <path d="M40 168 Q150 128 260 168 Q252 288 150 288 Q48 288 40 168 Z" fill="none" stroke="#6E5A34" stroke-width="2"/>
+                <path d="M48 180 Q150 142 252 180" fill="none" stroke="#6E5A34" stroke-width="1.4" stroke-dasharray="5 5" opacity=".7"/>
+                <path d="M62 216 Q150 244 238 216 M84 252 Q150 272 216 252" fill="none" stroke="#8F7648" stroke-width="1.3" opacity=".5"/>
+                <rect x="136" y="150" width="28" height="16" rx="7" fill="#7C5B2E" stroke="#57401F" stroke-width="1.6"/>
+                <ellipse cx="104" cy="206" rx="38" ry="40" fill="#FFFDF4" opacity=".2"/>
+              </svg>
+            </div>
+            <div class="piece-info">
+              <span class="label">Piece — 04</span>
+              <h3>Vela Crescent</h3>
+              <p class="piece-mat">Organic cotton cord · olivewood clasp</p>
+              <p class="piece-note">Knotted, never sewn — one unbroken line from first loop to last.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ manifesto ============ -->
+  <section id="manifesto" data-bg="#F0DCD1" data-ink="#46302B" data-line="rgba(70,48,43,.15)">
+    <div class="sec-label label">A note on slowness — 02</div>
+    <p class="mf-text" id="mfText">Every bag begins as a <em>single thread</em> — pulled, twisted and tamed by hands that have known the loom for <em>three generations.</em> We do not manufacture. <em>We remember.</em></p>
+    <div class="mf-sig">
+      <span class="sig-line"></span>
+      <span class="label">Alessandra Guetta — third generation at the loom, Milano</span>
+    </div>
+  </section>
+
+  <!-- ============ craft ============ -->
+
+  <!-- ============ the way through to the other house ============ -->
+  <section class="tail-note" data-bg="#EEE0CB" data-ink="#3A2A22" data-line="rgba(58,42,34,.15)">
+    <em id="tailLine">She also makes for the other half of the household.</em>
+    <a href="?p=collezione" class="t-coll" data-hover><i>See the collection</i> <svg viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h22M18 1l4 3-4 3"/></svg></a>
+    <a href="?p=piccoli" class="t-picc" data-hover><i>Made to measure, for animals</i> <svg viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h22M18 1l4 3-4 3"/></svg></a>
+  </section>
+
+  <section id="craft" data-bg="#B36A4C" data-ink="#FAEEDF" data-line="rgba(250,238,223,.24)">
+    <div class="craft-grid">
+      <div class="sec-label label">The Craft — 03</div>
+      <h2 class="craft-title"><span class="rl">Sixty hours.</span><span class="rl">Two hands.</span><span class="rl"><span class="it">One thread.</span></span></h2>
+      <div class="stats">
+        <div class="stat"><b data-count="60">0</b><span class="label">Hours per vessel</span></div>
+        <div class="stat"><b data-count="14">0</b><span class="label">Artisan families</span></div>
+        <div class="stat"><b data-count="1952">0</b><span class="label">First loom raised</span></div>
+        <div class="stat"><b data-count="0">0</b><span class="label">Machines, ever</span></div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h4><em>01</em><span class="step-t">The Weave</span></h4>
+          <p>Raffia is pulled at dawn, while the fibre still holds the night's water. Each strand is rolled against the knee — the old way — until it sings under tension.</p>
+        </div>
+        <div class="step">
+          <h4><em>02</em><span class="step-t">The Dye</span></h4>
+          <p>Indigo, cochineal and walnut hull, steeped in rain barrels behind the atelier. Colour arrives slowly here, the way dusk does.</p>
+        </div>
+        <div class="step">
+          <h4><em>03</em><span class="step-t">The Stitch</span></h4>
+          <p>Waxed linen, a saddler's needle, and a rhythm you can hear from the courtyard. Every seam is finished blind, so the bag keeps its secret.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ materials marquee ============ -->
+  <section id="materials" data-bg="#A85E43" data-ink="#FAEEDF" data-line="rgba(250,238,223,.24)">
+    <div class="mq mq1" id="mq1"></div>
+    <div class="mq mq2" id="mq2"></div>
+  </section>
+
+
+  <!-- ============ atelier ============ -->
+  <section id="atelier" data-bg="#E9C9B0" data-ink="#4A2E23" data-line="rgba(74,46,35,.18)">
+    <div class="at-scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E9C9B0" stop-opacity="0"/>
+            <stop offset=".55" stop-color="#E4B695" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#D9A182" stop-opacity=".85"/>
+          </linearGradient>
+          <linearGradient id="d1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#C69479"/><stop offset="1" stop-color="#9C6A50"/>
+          </linearGradient>
+          <linearGradient id="d2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#D2A181"/><stop offset="1" stop-color="#A9755B"/>
+          </linearGradient>
+          <linearGradient id="d3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#DFAF8D"/><stop offset="1" stop-color="#B4805F"/>
+          </linearGradient>
+          <radialGradient id="moon" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#FFF6E2" stop-opacity=".95"/>
+            <stop offset=".55" stop-color="#F5C9A0" stop-opacity=".38"/>
+            <stop offset="1" stop-color="#F5C9A0" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#sky)"/>
+        <circle class="at-moon" cx="1080" cy="270" r="190" fill="url(#moon)"/>
+        <path class="at-l1" d="M0 640 Q 360 560 720 620 T 1440 600 V900 H0 Z" fill="url(#d1)"/>
+        <path class="at-l2" d="M0 730 Q 420 640 840 716 T 1440 700 V900 H0 Z" fill="url(#d2)"/>
+        <path class="at-l3" d="M0 830 Q 480 740 900 812 T 1440 800 V900 H0 Z" fill="url(#d3)"/>
+        <rect class="at-mist m1" x="-100" y="600" width="1740" height="90" fill="#FBEBD8" opacity=".14"/>
+        <rect class="at-mist m2" x="-100" y="700" width="1740" height="120" fill="#FBEBD8" opacity=".11"/>
+      </svg>
+    </div>
+    <div class="at-frame">
+      <div class="sec-label label" style="justify-content:center;">The Atelier — 04</div>
+      <blockquote class="at-quote" id="atQuote">“A bag is a <em>small architecture</em> — a room you carry.”</blockquote>
+      <p class="at-cite label">Alessandra Guetta — Founder, third generation</p>
+    </div>
+  </section>
+
+  <!-- ============ footer ============ -->
+  <section id="footer-sec" data-bg="#7C4A38" data-ink="#F7E9DA" data-line="rgba(247,233,218,.2)">
+    <div class="ft-invite">
+      <div class="sec-label label" style="justify-content:center;">Correspondence — 05</div>
+      <p>The atelier receives visitors by appointment only.<br>Write to us — the coffee will be waiting.</p>
+      <a class="ft-mail" href="mailto:atelier@puntiespunti.example" data-hover>atelier@puntiespunti.example</a>
+    </div>
+    <div class="ft-word stitched" id="ftWord">
+      <span class="ft-stitchwrap" style="display:block">
+        <!-- the mark: one PUNTI stacked on the other, and the single S
+             that turns the second into SPUNTI stepping out to the left -->
+        <svg viewBox="0 0 1000 372" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Punti e Spunti">
+          <text class="ft-s" x="40"  y="330" font-size="182">S</text>
+          <text          x="180" y="146" font-size="182" textLength="700" lengthAdjust="spacing">PUNTI</text>
+          <text class="ft-e" x="908" y="196" font-size="118">e</text>
+          <text          x="180" y="330" font-size="182" textLength="700" lengthAdjust="spacing">PUNTI</text>
+        </svg>
+      </span>
+    </div>
+    <div class="ft-row">
+      <span class="label" id="ftAddr">Via della Spiga 11, Milano &nbsp;·&nbsp; <span id="clockFt"></span></span>
+      <div class="ft-social label">
+        <a href="#" data-hover>Instagram</a>
+        <a href="#" data-hover>Pinterest</a>
+        <a href="#" data-hover>Journal</a>
+      </div>
+      <span class="label">© MMXXVI — Woven, not made</span>
+    </div>
+  </section>
+
+</main>
+
+<script>@@VENDOR:gsap.min.js@@</script>
+<script>@@VENDOR:scrolltrigger.min.js@@</script>
+<script>@@VENDOR:three.min.js@@</script>
+<script>@@VENDOR:lenis.min.js@@</script>
+<script>@@APP@@</script>
+
+</body>
+</html>

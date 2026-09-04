@@ -1,0 +1,5 @@
+# Punti e Spunti
+User-agent: *
+Allow: /
+
+Sitemap: https://puntiespunti.it/sitemap.xml

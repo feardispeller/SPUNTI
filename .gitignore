@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+.cache/
+# dist/ IS committed on purpose — it is the deployable artefact and the
+# thing a static host serves. Never hand-edit it; it is overwritten by
+# `npm run build`.
